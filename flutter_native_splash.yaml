@@ -1,0 +1,7 @@
+flutter_native_splash:
+  color: "#1E1E1E"
+  image: assets/brand/oiiax/logos/OIIAX_Icon_Light_Transparent.png
+
+  android_12:
+    color: "#1E1E1E"
+    image: assets/brand/oiiax/logos/OIIAX_Icon_Light_Transparent.png

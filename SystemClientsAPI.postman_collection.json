@@ -1,0 +1,1034 @@
+{
+  "info": {
+    "_postman_id": "a40fb2b1-8ffb-417a-a8b0-5c133248807a",
+    "name": "SystemClientsAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38755575",
+    "_collection_link": "https://team-development-app-blockatie.postman.co/workspace/team-development-app-blockatie-~c62a3316-5f28-4b5b-848f-f5173373e4b8/collection/45205078-a40fb2b1-8ffb-417a-a8b0-5c133248807a?action=share&source=collection_link&creator=38755575"
+  },
+  "item": [
+    {
+      "name": "Get System Settings",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba96",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_system_settings.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_system_settings.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login Client",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "phone",
+              "value": "0779735666",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "1234567890",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/client_login.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "client_login.php"],
+          "query": [
+            {
+              "key": "phone",
+              "value": "0779735666",
+              "disabled": true
+            },
+            {
+              "key": "password",
+              "value": "00000",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register Client",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "nclient",
+              "value": "mohammad",
+              "type": "text"
+            },
+            {
+              "key": "nstore",
+              "value": "y store",
+              "type": "text"
+            },
+            {
+              "key": "phclient",
+              "value": "00962779735687",
+              "type": "text"
+            },
+            {
+              "key": "passclient",
+              "value": "2020202020",
+              "type": "text"
+            },
+            {
+              "key": "lclient",
+              "value": "amman/salt",
+              "type": "text"
+            },
+            {
+              "key": "loshop",
+              "type": "file",
+              "src": "/C:/Users/SaddamBadran/Downloads/Trusted and certified.webp"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/register_client.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "register_client.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Client Profile",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba96",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "nclient",
+              "value": "mohammad",
+              "type": "text"
+            },
+            {
+              "key": "nstore",
+              "value": "y store",
+              "type": "text"
+            },
+            {
+              "key": "phclient",
+              "value": "00962779735616",
+              "type": "text"
+            },
+            {
+              "key": "passclient",
+              "value": "202020",
+              "type": "text"
+            },
+            {
+              "key": "lclient",
+              "value": "amman/amman",
+              "type": "text"
+            },
+            {
+              "key": "loshop",
+              "type": "file",
+              "src": "/C:/Users/SaddamBadran/Downloads/Trusted and certified.webp"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/client_profile.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "client_profile.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Client Rating",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba96",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "1",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_client_rating.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_client_rating.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Client Info",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba96",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "client_id",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "nclient",
+              "value": "sadam",
+              "type": "text"
+            },
+            {
+              "key": "nstore",
+              "value": "salam store",
+              "type": "text"
+            },
+            {
+              "key": "passclient",
+              "value": "1234567891",
+              "type": "text"
+            },
+            {
+              "key": "lclient",
+              "value": "jordan zarqa",
+              "type": "text"
+            },
+            {
+              "key": "loshop",
+              "type": "file",
+              "src": [
+                "/C:/Users/sadda/Downloads/notfiction.png",
+                "/C:/Users/SaddamBadran/Downloads/CGAPP.webp"
+              ]
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/update_client_info.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "update_client_info.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Notifications",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba56",
+            "type": "text"
+          },
+          {
+            "key": "",
+            "value": "",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "3",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/get_notifications.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "get_notifications.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Client Statistics",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "3",
+              "type": "text"
+            },
+            {
+              "key": "api_key",
+              "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3b822",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/get_statistics.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "get_statistics.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Shipments All List",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba56",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "clientId",
+              "value": "2",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_shipments.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_shipments.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Shipments Instant List",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba56",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "clientId",
+              "value": "2",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_shipments_instant.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_shipments_instant.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Order Status List",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba96",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": []
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_order_status.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_order_status.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Delivery Types",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba96",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": []
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_delivery_types.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_delivery_types.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Active Cities with API Key",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba96",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": []
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_cities.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_cities.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Active Regions",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba96",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_regions.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_regions.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Region Drivers Data",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba96",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "3",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_region_drivers.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_region_drivers.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get City Prices by Client",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba96",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "id_client",
+              "value": "2",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_order_price.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_order_price.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Requests by Client",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba96",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "2",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_requests.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_requests.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Send Withdrawal Request",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba56",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "driver_id",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "2",
+              "type": "text"
+            },
+            {
+              "key": "amount",
+              "value": "22.3",
+              "type": "text"
+            },
+            {
+              "key": "withdrawal_method",
+              "value": "Cash",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_add_withdrawal_request.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_add_withdrawal_request.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Send Client Message",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba96",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "firstname",
+              "value": "saddam",
+              "type": "text"
+            },
+            {
+              "key": "lastname",
+              "value": "badran",
+              "type": "text"
+            },
+            {
+              "key": "phone",
+              "value": "0779735616",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "saddam@gmail.com",
+              "type": "text"
+            },
+            {
+              "key": "message",
+              "value": "saddam",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_client_messages.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_client_messages.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Shipment Request From Clients",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba96",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "2",
+              "type": "text"
+            },
+            {
+              "key": "shipment_date",
+              "value": "2025-06-01 12:30:00",
+              "type": "text"
+            },
+            {
+              "key": "recipient_name",
+              "value": "John Doe",
+              "type": "text"
+            },
+            {
+              "key": "recipient_phone",
+              "value": "0788123456",
+              "type": "text"
+            },
+            {
+              "key": "governorate_id",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "delivery_address",
+              "value": "123 Main St, Amman",
+              "type": "text"
+            },
+            {
+              "key": "shipment_cost",
+              "value": "100.00",
+              "type": "text"
+            },
+            {
+              "key": "product_type_id",
+              "value": "2",
+              "type": "text"
+            },
+            {
+              "key": "delivery_type_id",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "nnote",
+              "value": "Handle with care",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_add_shipment_from_client.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_add_shipment_from_client.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cancel Shipment Request",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72ba073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba56",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "shipment_id",
+              "value": "75",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "2",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_cancel_shipment.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_cancel_shipment.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filter Shipments",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba56",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "driver_id",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "shipment_date",
+              "value": "2025-02-27",
+              "type": "text"
+            },
+            {
+              "key": "shipment_status",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "location",
+              "value": "amman",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/shipment_filter.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "shipment_filter.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Shipment Status",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba56",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "2",
+              "type": "text"
+            },
+            {
+              "key": "shipment_id",
+              "value": "1",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_shipment_status.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_shipment_status.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Order Details",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba96",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "order_id",
+              "value": "4",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_order_details.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_order_details.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Shipment Driver Coords",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba56",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "shipment_id",
+              "value": "1",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/shipment_driver_coords.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "shipment_driver_coords.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Drivers API Request",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba56",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "clientId",
+              "value": "2",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_drivers.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_drivers.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Packages",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "5f07f5199172a72b073d1293a7fd125966902f0f926e78ec10cf93cc47f3ba96",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "client_id",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "nclient",
+              "value": "sadam",
+              "type": "text"
+            },
+            {
+              "key": "nstore",
+              "value": "salam store",
+              "type": "text"
+            },
+            {
+              "key": "passclient",
+              "value": "1234567891",
+              "type": "text"
+            },
+            {
+              "key": "lclient",
+              "value": "jordan zarqa",
+              "type": "text"
+            },
+            {
+              "key": "loshop",
+              "type": "file",
+              "src": [
+                "/C:/Users/sadda/Downloads/notfiction.png",
+                "/C:/Users/SaddamBadran/Downloads/CGAPP.webp"
+              ]
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.blockatie.com/services/api_packages.php",
+          "protocol": "https",
+          "host": ["inprogress", "rocode-jo", "com"],
+          "path": ["services", "api_packages.php"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}

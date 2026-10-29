@@ -1,0 +1,113 @@
+import java.util.Properties
+import java.io.FileInputStream
+
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services"
+}
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file("key.properties")
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(new FileInputStream(localPropertiesFile))
+}
+
+def mapsApiKey = [
+        project.findProperty("MAPS_API_KEY"),
+        System.getenv("MAPS_API_KEY"),
+        localProperties.getProperty("MAPS_API_KEY")
+].find { value -> value != null && !value.toString().trim().isEmpty() }
+mapsApiKey = mapsApiKey == null ? "" : mapsApiKey.toString().trim()
+
+def isReleaseTaskRequested = gradle.startParameter.taskNames.any { taskName ->
+    taskName.toLowerCase().contains("release")
+}
+
+if (isReleaseTaskRequested && mapsApiKey.isEmpty()) {
+    throw new GradleException(
+            "MAPS_API_KEY is required for release builds. Provide it with -PMAPS_API_KEY, " +
+                    "the MAPS_API_KEY environment variable, or android/local.properties."
+    )
+}
+
+def requiredKeystoreProperties = ['storeFile', 'storePassword', 'keyAlias', 'keyPassword']
+def hasRequiredKeystoreProperties = keystorePropertiesFile.exists() &&
+        requiredKeystoreProperties.every { propertyName ->
+            def value = keystoreProperties.getProperty(propertyName)
+            value != null && !value.trim().isEmpty()
+        }
+def releaseKeystoreFile = hasRequiredKeystoreProperties ? file(keystoreProperties['storeFile']) : null
+def hasReleaseSigningConfig = releaseKeystoreFile != null && releaseKeystoreFile.exists()
+
+if (isReleaseTaskRequested && !hasReleaseSigningConfig) {
+    throw new GradleException(
+            "Release signing is not configured. android/key.properties must contain non-empty " +
+                    "storeFile, storePassword, keyAlias, and keyPassword values, and storeFile must exist."
+    )
+}
+
+android {
+    namespace "com.blockatie.app"
+    compileSdk 36
+    ndkVersion = flutter.ndkVersion
+
+    lintOptions {
+        disable 'InvalidPackage'
+        checkReleaseBuilds false
+    }
+
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        applicationId "com.blockatie.app"
+        minSdkVersion flutter.minSdkVersion
+        targetSdk 35
+        versionCode flutter.versionCode
+        versionName flutter.versionName
+        // Merge, don't assign: the Flutter plugin already set "applicationName" here.
+        manifestPlaceholders += [MAPS_API_KEY: mapsApiKey]
+    }
+
+    signingConfigs {
+        release {
+            if (hasReleaseSigningConfig) {
+                storeFile releaseKeystoreFile
+                storePassword keystoreProperties['storePassword']
+                keyAlias keystoreProperties['keyAlias']
+                keyPassword keystoreProperties['keyPassword']
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            shrinkResources false
+            minifyEnabled false
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+dependencies {
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
+}
